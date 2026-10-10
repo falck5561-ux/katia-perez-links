@@ -267,3 +267,79 @@ footer { display:flex; align-items:center; justify-content:space-between; gap:18
     height: 27px !important;
   }
 }
+
+/* v9 — TikTok restored; PIONER and Bucked Up are the two primary quick actions */
+.social-row-v9 {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.social-row-v9 .social-primary {
+  width: 54px;
+  height: 54px;
+  border-width: 1px;
+}
+.social-row-v9 .social-kp {
+  border-color: rgba(233,139,171,.24);
+  background: linear-gradient(145deg,rgba(233,139,171,.075),#19191d 68%);
+  box-shadow: 0 9px 24px rgba(233,139,171,.075);
+}
+.social-row-v9 .social-kp img {
+  width: 37px;
+  height: 37px;
+}
+.social-row-v9 .social-sponsor {
+  border-color: rgba(239,53,53,.2) !important;
+  background: linear-gradient(145deg,rgba(239,53,53,.035),#19191d 68%) !important;
+  box-shadow: 0 9px 24px rgba(225,35,43,.055) !important;
+}
+.social-row-v9 .social-sponsor .deer-icon {
+  width: 35px !important;
+  height: 35px !important;
+}
+.social-row-v9 .social-sponsor:hover {
+  border-color: rgba(239,53,53,.58) !important;
+  background: rgba(239,53,53,.13) !important;
+  box-shadow: 0 10px 27px rgba(225,35,43,.14) !important;
+}
+@media (max-width: 520px) {
+  .social-row-v9 {
+    max-width: 19rem;
+    margin-inline: auto;
+    gap: .48rem;
+  }
+  .social-row-v9 > a {
+    width: 2.68rem;
+    height: 2.68rem;
+  }
+  .social-row-v9 .social-primary {
+    width: 3.05rem;
+    height: 3.05rem;
+  }
+  .social-row-v9 .social-kp img {
+    width: 2.05rem;
+    height: 2.05rem;
+  }
+  .social-row-v9 .social-sponsor .deer-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+@media (max-width: 360px) {
+  .social-row-v9 {
+    max-width: 17rem;
+    gap: .38rem;
+  }
+  .social-row-v9 > a {
+    width: 2.48rem;
+    height: 2.48rem;
+  }
+  .social-row-v9 .social-primary {
+    width: 2.82rem;
+    height: 2.82rem;
+  }
+}
+
+/* v10 — balanced quick actions + 2x2 contact grid */
+@media (min-width: 760px) {
+  .secondary-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
