@@ -126,3 +126,144 @@ footer { display:flex; align-items:center; justify-content:space-between; gap:18
 }
 @media (hover:none) { .link-card:hover,.sponsor-card:hover,.social-row a:hover,.share-button:hover { transform:none; } }
 @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+
+/* v5 quick-contact polish */
+.social-sponsor img {
+  width: 2.2rem;
+  height: 1.35rem;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 420px) {
+  .social-row { gap: .45rem; }
+  .social-row > a { width: 2.75rem; height: 2.75rem; }
+  .social-sponsor img { width: 1.95rem; height: 1.2rem; }
+}
+
+/* v6 sponsor + contact refinement */
+.social-sponsor {
+  border-color: rgba(239, 53, 53, .42) !important;
+  background: linear-gradient(145deg, #f02f34, #b9141c) !important;
+  box-shadow: 0 8px 22px rgba(225, 35, 43, .2);
+}
+.social-sponsor:hover {
+  border-color: rgba(255, 115, 115, .72) !important;
+  background: linear-gradient(145deg, #ff3d42, #ca1821) !important;
+}
+.deer-crop {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 28px;
+  overflow: hidden;
+}
+.deer-crop img {
+  position: absolute;
+  width: 46px !important;
+  height: auto !important;
+  max-width: none;
+  left: 50%;
+  top: -2px;
+  transform: translateX(-50%);
+  object-fit: initial !important;
+  filter: brightness(0) invert(1);
+}
+.contact-strip {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 11px;
+  border: 1px solid rgba(255,255,255,.075);
+  border-radius: 18px;
+  background: linear-gradient(135deg,rgba(255,255,255,.026),rgba(255,255,255,.012));
+  padding: 11px 13px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.contact-strip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(233,139,171,.2);
+  background: rgba(233,139,171,.035);
+}
+.contact-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(233,139,171,.08);
+  color: #efa4be;
+}
+.contact-icon svg { width: 19px; height: 19px; fill: currentColor; }
+.contact-strip > span:nth-child(2) { min-width: 0; }
+.contact-strip small,.contact-strip strong { display:block; }
+.contact-strip small { color:#756d71; font-size:7px; font-weight:900; letter-spacing:.16em; }
+.contact-strip strong { margin-top:3px; overflow:hidden; color:#d8d0d4; font-size:11px; text-overflow:ellipsis; white-space:nowrap; }
+.contact-strip b { color:#9a8f95; font-size:9px; font-weight:800; white-space:nowrap; }
+@media (max-width:420px) {
+  .deer-crop { width:27px; height:25px; }
+  .deer-crop img { width:42px !important; top:-2px; }
+  .contact-strip { grid-template-columns:auto minmax(0,1fr); }
+  .contact-strip b { display:none; }
+}
+
+/* v7 — Bucked Up quick icon: neutral by default, red only on hover */
+.social-sponsor {
+  border-color: var(--line) !important;
+  background: #19191d !important;
+  box-shadow: none !important;
+}
+.social-sponsor:hover {
+  border-color: rgba(239, 53, 53, .52) !important;
+  background: rgba(239, 53, 53, .13) !important;
+  color: #ff5a5f !important;
+  box-shadow: 0 9px 24px rgba(225, 35, 43, .12) !important;
+}
+.deer-crop {
+  position: relative;
+  display: block;
+  width: 31px;
+  height: 23px;
+  overflow: hidden;
+}
+.deer-crop img {
+  position: absolute;
+  width: 42px !important;
+  height: auto !important;
+  max-width: none !important;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: block;
+}
+.social-sponsor:hover .deer-crop img {
+  filter: brightness(1.12) saturate(1.08);
+}
+@media (hover: none) {
+  .social-sponsor:active {
+    border-color: rgba(239, 53, 53, .52) !important;
+    background: rgba(239, 53, 53, .13) !important;
+    box-shadow: 0 9px 24px rgba(225, 35, 43, .12) !important;
+  }
+}
+
+
+/* v8 — dedicated transparent Bucked Up deer icon, centered as third quick action */
+.social-sponsor .deer-icon {
+  display: block;
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+  max-width: none;
+}
+.social-sponsor:hover .deer-icon {
+  filter: brightness(1.08) saturate(1.12);
+}
+@media (max-width: 420px) {
+  .social-sponsor .deer-icon {
+    width: 27px !important;
+    height: 27px !important;
+  }
+}

@@ -9,7 +9,7 @@ function showToast(message) {
 }
 
 shareButton.addEventListener("click", async () => {
-  const data = { title: "Katia Pérez", text: "Mis enlaces oficiales", url: window.location.href };
+  const data = { title: "Amai Ponce", text: "Mis enlaces oficiales", url: window.location.href };
   try {
     if (navigator.share) {
       await navigator.share(data);
