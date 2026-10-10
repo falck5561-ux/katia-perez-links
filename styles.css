@@ -343,3 +343,13 @@ footer { display:flex; align-items:center; justify-content:space-between; gap:18
 @media (min-width: 760px) {
   .secondary-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* v12 — mobile-only quick-action order */
+@media (max-width: 759px) {
+  .social-row-v9 > a:nth-child(1) { order: 1; } /* TikTok */
+  .social-row-v9 > a:nth-child(2) { order: 2; } /* PIONER */
+  .social-row-v9 > a:nth-child(5) { order: 3; } /* Bucked Up */
+  .social-row-v9 > a:nth-child(3) { order: 4; } /* Instagram */
+  .social-row-v9 > a:nth-child(4) { order: 5; } /* Linktree */
+  .social-row-v9 > a:nth-child(6) { order: 6; } /* Email */
+}
