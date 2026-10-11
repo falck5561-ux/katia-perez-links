@@ -353,3 +353,255 @@ footer { display:flex; align-items:center; justify-content:space-between; gap:18
   .social-row-v9 > a:nth-child(4) { order: 5; } /* Linktree */
   .social-row-v9 > a:nth-child(6) { order: 6; } /* Email */
 }
+
+
+/* v13 — Vinted added with balanced responsive composition */
+.vinted-icon {
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.12em;
+  color: #56c6c6;
+  background: linear-gradient(145deg, rgba(86,198,198,.11), rgba(255,255,255,.025));
+  border-color: rgba(86,198,198,.18);
+}
+.vinted-card:hover {
+  border-color: rgba(86,198,198,.28);
+  background: linear-gradient(145deg, rgba(86,198,198,.045), #19171a 55%);
+}
+.vinted-card:hover .arrow {
+  background: rgba(86,198,198,.10);
+  color: #a8eeee;
+}
+@media (min-width: 760px) {
+  .secondary-links {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .secondary-links > .link-card {
+    grid-column: span 2;
+  }
+  .secondary-links > .link-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+  .secondary-links > .vinted-card {
+    grid-column: 4 / span 2;
+  }
+}
+@media (max-width: 759px) {
+  .secondary-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .secondary-links > .vinted-card {
+    grid-column: 1 / -1;
+    width: min(100%, 25rem);
+    justify-self: center;
+  }
+}
+@media (max-width: 420px) {
+  .secondary-links { gap: 9px; }
+  .secondary-links .link-card {
+    grid-template-columns: 42px minmax(0,1fr) 28px;
+    gap: 9px;
+    min-height: 72px;
+    padding: 10px;
+  }
+  .secondary-links .link-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+  .secondary-links .link-copy strong { font-size: 12.5px; }
+  .secondary-links .link-copy small { font-size: 9.5px; }
+  .secondary-links .arrow { width: 27px; height: 27px; font-size: 15px; }
+  .secondary-links > .vinted-card {
+    width: calc(50% - 4.5px);
+    min-width: 0;
+  }
+}
+@media (max-width: 350px) {
+  .secondary-links { grid-template-columns: 1fr; }
+  .secondary-links > .vinted-card { width: 100%; }
+}
+
+/* v14 — official Vinted artwork + Vinted as quick action #4 on desktop and mobile */
+.social-vinted {
+  overflow: hidden;
+}
+.social-vinted img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+.social-vinted:hover {
+  border-color: rgba(9, 157, 168, .55) !important;
+  background: rgba(9, 157, 168, .12) !important;
+  box-shadow: 0 9px 24px rgba(9, 157, 168, .12) !important;
+}
+.vinted-icon {
+  padding: 0 !important;
+  overflow: hidden;
+  background: #099da8 !important;
+}
+.vinted-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DOM order: TikTok, PIONER, Instagram, Vinted, Linktree, Bucked Up, Email */
+@media (max-width: 759px) {
+  .social-row-v9 > a:nth-child(1) { order: 1; } /* TikTok */
+  .social-row-v9 > a:nth-child(2) { order: 2; } /* PIONER */
+  .social-row-v9 > a:nth-child(6) { order: 3; } /* Bucked Up */
+  .social-row-v9 > a:nth-child(4) { order: 4; } /* Vinted */
+  .social-row-v9 > a:nth-child(3) { order: 5; } /* Instagram */
+  .social-row-v9 > a:nth-child(5) { order: 6; } /* Linktree */
+  .social-row-v9 > a:nth-child(7) { order: 7; } /* Email */
+}
+@media (max-width: 520px) {
+  .social-row-v9 {
+    max-width: 21rem;
+  }
+  .social-vinted img {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (max-width: 360px) {
+  .social-row-v9 {
+    max-width: 19rem;
+    gap: .32rem;
+  }
+  .social-row-v9 > a {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+  .social-row-v9 .social-primary {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+
+/* v15 — desktop composition refinements requested by Amai */
+/* Vinted quick action: same visual weight as PIONER/Bucked Up, using a clean V. */
+.social-row-v9 .social-vinted {
+  border-color: rgba(9,157,168,.22) !important;
+  background: linear-gradient(145deg,rgba(9,157,168,.055),#19191d 68%) !important;
+  box-shadow: 0 9px 24px rgba(9,157,168,.065) !important;
+  color: #f7f5f6;
+}
+.social-row-v9 .social-vinted .vinted-letter {
+  display:block;
+  transform: translateX(-1px) skewX(-8deg);
+  color:#fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:29px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-.08em;
+}
+.social-row-v9 .social-vinted:hover {
+  border-color: rgba(9,157,168,.58) !important;
+  background: rgba(9,157,168,.13) !important;
+  box-shadow: 0 10px 27px rgba(9,157,168,.14) !important;
+  color:#fff;
+}
+
+/* Desktop quick actions: Bucked Up takes Vinted's old #4 slot; Vinted moves later. */
+@media (min-width:760px) {
+  .social-row-v9 > a:nth-child(1) { order:1; } /* TikTok */
+  .social-row-v9 > a:nth-child(2) { order:2; } /* PIONER */
+  .social-row-v9 > a:nth-child(3) { order:3; } /* Instagram */
+  .social-row-v9 > a:nth-child(6) { order:4; } /* Bucked Up */
+  .social-row-v9 > a:nth-child(5) { order:5; } /* Linktree */
+  .social-row-v9 > a:nth-child(4) { order:6; } /* Vinted */
+  .social-row-v9 > a:nth-child(7) { order:7; } /* Email */
+
+  /* Contact grid: Vinted is card #2 visually on desktop. */
+  .secondary-links {
+    grid-template-columns:repeat(6,minmax(0,1fr));
+  }
+  .secondary-links > .link-card { grid-column:auto; }
+  .secondary-links > .link-card:nth-child(1) { grid-column:1 / span 2; grid-row:1; } /* Instagram */
+  .secondary-links > .vinted-card             { grid-column:3 / span 2; grid-row:1; } /* Vinted #2 */
+  .secondary-links > .link-card:nth-child(2) { grid-column:5 / span 2; grid-row:1; } /* TikTok */
+  .secondary-links > .link-card:nth-child(3) { grid-column:2 / span 2; grid-row:2; } /* Linktree */
+  .secondary-links > .link-card:nth-child(4) { grid-column:4 / span 2; grid-row:2; } /* Email */
+}
+
+/* Mobile keeps the v14 ordering: Bucked Up #3 and Vinted #4. */
+@media (max-width:759px) {
+  .social-row-v9 .social-vinted .vinted-letter { font-size:26px; }
+  .social-row-v9 > a:nth-child(1) { order:1; }
+  .social-row-v9 > a:nth-child(2) { order:2; }
+  .social-row-v9 > a:nth-child(6) { order:3; }
+  .social-row-v9 > a:nth-child(4) { order:4; }
+  .social-row-v9 > a:nth-child(3) { order:5; }
+  .social-row-v9 > a:nth-child(5) { order:6; }
+  .social-row-v9 > a:nth-child(7) { order:7; }
+}
+
+
+/* v16 — final requested ordering */
+.bucked-mobile-card { display:none; }
+.bucked-link-icon { background:rgba(239,53,53,.055); border-color:rgba(239,53,53,.14); }
+.bucked-link-icon img { width:32px; height:32px; object-fit:contain; }
+.bucked-mobile-card:hover { border-color:rgba(239,53,53,.28); background:rgba(239,53,53,.045); }
+.bucked-mobile-card:hover .arrow { border-color:rgba(239,53,53,.25); color:#ef6666; }
+
+/* Desktop quick icons: Bucked Up #4, Vinted #6. */
+@media (min-width:760px) {
+  .social-row-v9 > a:nth-child(1) { order:1 !important; } /* TikTok */
+  .social-row-v9 > a:nth-child(2) { order:2 !important; } /* PIONER */
+  .social-row-v9 > a:nth-child(3) { order:3 !important; } /* Instagram */
+  .social-row-v9 > a:nth-child(6) { order:4 !important; } /* Bucked Up */
+  .social-row-v9 > a:nth-child(5) { order:5 !important; } /* Linktree */
+  .social-row-v9 > a:nth-child(4) { order:6 !important; } /* Vinted */
+  .social-row-v9 > a:nth-child(7) { order:7 !important; } /* Email */
+
+  /* Keep desktop contact layout from v15: Instagram, Vinted, TikTok / Linktree, Email. */
+  .secondary-links { grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .secondary-links > .instagram-card { grid-column:1 / span 2 !important; grid-row:1 !important; }
+  .secondary-links > .vinted-card   { grid-column:3 / span 2 !important; grid-row:1 !important; }
+  .secondary-links > .tiktok-card   { grid-column:5 / span 2 !important; grid-row:1 !important; }
+  .secondary-links > .linktree-card { grid-column:2 / span 2 !important; grid-row:2 !important; }
+  .secondary-links > .email-card    { grid-column:4 / span 2 !important; grid-row:2 !important; }
+}
+
+/* Mobile contact cards: Instagram #1, Bucked Up #2, Vinted #3. */
+@media (max-width:759px) {
+  .bucked-mobile-card { display:grid; }
+  .secondary-links > .instagram-card     { order:1; }
+  .secondary-links > .bucked-mobile-card { order:2; }
+  .secondary-links > .vinted-card        { order:3; }
+  .secondary-links > .tiktok-card        { order:4; }
+  .secondary-links > .linktree-card      { order:5; }
+  .secondary-links > .email-card         { order:6; }
+}
+
+/* v17 — corrected final ordering requested by Amai */
+/* Desktop quick icons: TikTok #1, PIONER #2, Instagram #3, Bucked Up #4, Linktree #5, Vinted #6, Email #7. */
+@media (min-width:760px) {
+  .social-row-v9 > a:nth-child(1) { order:1 !important; }
+  .social-row-v9 > a:nth-child(2) { order:2 !important; }
+  .social-row-v9 > a:nth-child(3) { order:3 !important; }
+  .social-row-v9 > a:nth-child(6) { order:4 !important; }
+  .social-row-v9 > a:nth-child(5) { order:5 !important; }
+  .social-row-v9 > a:nth-child(4) { order:6 !important; }
+  .social-row-v9 > a:nth-child(7) { order:7 !important; }
+}
+
+/* Mobile lower links: PIONER is the featured card above; Bucked Up is #2 overall, Vinted #3 overall. */
+@media (max-width:759px) {
+  .secondary-links > .bucked-mobile-card { order:1 !important; }
+  .secondary-links > .vinted-card { order:2 !important; }
+  .secondary-links > .instagram-card { order:3 !important; }
+  .secondary-links > .tiktok-card { order:4 !important; }
+  .secondary-links > .linktree-card { order:5 !important; }
+  .secondary-links > .email-card { order:6 !important; }
+}
