@@ -605,3 +605,33 @@ footer { display:flex; align-items:center; justify-content:space-between; gap:18
   .secondary-links > .linktree-card { order:5 !important; }
   .secondary-links > .email-card { order:6 !important; }
 }
+
+/* v18 — mobile lower-card alignment only: PIONER stays full-width above. */
+@media (max-width:759px) {
+  .secondary-links {
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+  }
+
+  .secondary-links > .bucked-mobile-card,
+  .secondary-links > .vinted-card,
+  .secondary-links > .instagram-card,
+  .secondary-links > .tiktok-card,
+  .secondary-links > .linktree-card,
+  .secondary-links > .email-card {
+    display:grid !important;
+    width:100% !important;
+    max-width:none !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    margin:0 !important;
+  }
+
+  .secondary-links > .bucked-mobile-card { order:1 !important; }
+  .secondary-links > .vinted-card { order:2 !important; }
+  .secondary-links > .instagram-card { order:3 !important; }
+  .secondary-links > .tiktok-card { order:4 !important; }
+  .secondary-links > .linktree-card { order:5 !important; }
+  .secondary-links > .email-card { order:6 !important; }
+}
